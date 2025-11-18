@@ -47,7 +47,7 @@ export default function Home() {
       
       <div id="hero" data-section="hero">
         <HeroSplit
-          title="Premium Hookah Experience"
+          title="Title"
           description="Immerse yourself in the finest hookah traditions with our premium selection of flavors, elegant atmosphere, and exceptional service. Where friends gather and memories are made."
           tag="Authentic Experience"
           tagIcon={Sparkles}
