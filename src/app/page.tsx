@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingOverlay from '@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
 import HeroSplit from '@/components/sections/hero/HeroSplit';
@@ -9,7 +9,7 @@ import SocialProofOne from '@/components/sections/socialProof/SocialProofOne';
 import FaqDouble from '@/components/sections/faq/FaqDouble';
 import ContactCenter from '@/components/sections/contact/ContactCenter';
 import FooterSocial from '@/components/sections/footer/FooterSocial';
-import { Award, Crown, HelpCircle, MapPin, MessageSquare, Sparkles, Star, User } from "lucide-react";
+import { Award, Crown, HelpCircle, MapPin, MessageSquare, Sparkles, Star, User, Instagram, Facebook, Twitter } from "lucide-react";
 
 export default function Home() {
   return (
@@ -275,17 +275,17 @@ export default function Home() {
           ]}
           socialLinks={[
             {
-              icon: "Instagram",
+              icon: Instagram,
               href: "https://instagram.com/hookahclub",
               ariaLabel: "Follow us on Instagram"
             },
             {
-              icon: "Facebook",
+              icon: Facebook,
               href: "https://facebook.com/hookahclub",
               ariaLabel: "Like us on Facebook"
             },
             {
-              icon: "Twitter",
+              icon: Twitter,
               href: "https://twitter.com/hookahclub",
               ariaLabel: "Follow us on Twitter"
             }
