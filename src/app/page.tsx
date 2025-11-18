@@ -229,7 +229,7 @@ export default function Home() {
           description="Join us for an unforgettable hookah experience. Reserve your table today or sign up for exclusive offers and event notifications."
           tagIcon={MapPin}
           inputPlaceholder="Enter your email"
-          buttonText="Reserve Now"
+          buttonText="Get Exclusive Offers"
           termsText="By signing up, you agree to receive promotional emails and updates about special events and offers."
         />
       </div>
