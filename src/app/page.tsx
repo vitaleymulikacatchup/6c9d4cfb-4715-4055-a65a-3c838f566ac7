@@ -63,8 +63,11 @@ export default function Home() {
       
       <div id="about" data-section="about">
         <TagAbout
-          tag="Our Story"
+          tag="Our story block"
           description="At Hookah Club, we celebrate the ancient art of hookah smoking in a modern, sophisticated environment. Our carefully curated selection of premium tobaccos, expertly maintained equipment, and warm hospitality create an unparalleled experience that brings people together across cultures and traditions."
+          className="bg-yellow-200"
+          tagClassName="text-black"
+          descriptionClassName="text-black"
         />
       </div>
       
