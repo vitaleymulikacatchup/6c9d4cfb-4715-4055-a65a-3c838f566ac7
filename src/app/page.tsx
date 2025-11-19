@@ -55,11 +55,11 @@ export default function Home() {
             { text: "Reserve Table", href: "contact" },
             { text: "View Menu", href: "products" }
           ]}
-          imageSrc="https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763476681691-lj0mxbpd.jpg"
+          imageSrc="https:https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpghttps://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpgwebuild-dev.s3.eu-north-1.amazonaws.comhttps://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpgusershttps://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpguser_34yEatLQt6B9A82mZgfqKsKaLO9https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpguploaded-1763476681691-lj0mxbpd.jpg"
           imageAlt="Luxury hookah lounge interior with ambient lighting"
           imagePosition="right"
-        />
-      </div>
+        https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpg>
+      <https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34yEatLQt6B9A82mZgfqKsKaLO9/uploaded-1763468565487-6btb893f.jpgdiv>
       
       <div id="about" data-section="about">
         <TagAbout

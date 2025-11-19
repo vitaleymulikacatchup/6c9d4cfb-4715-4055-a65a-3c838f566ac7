@@ -520,21 +520,44 @@ export default function RootLayout({
       data: { selector: getElementInfo(element).selector }
     }, '*');
     
+    const handleBeforeInput = (e) => {
+      // Prevent deletion if it would leave the element empty
+      const currentText = element.textContent || '';
+      const inputType = e.inputType;
+      
+      // Check if this is a delete operation that would leave the element empty
+      if ((inputType === 'deleteContentBackward' || inputType === 'deleteContentForward' || inputType === 'deleteByCut') && currentText.length <= 1) {
+        e.preventDefault();
+        element.textContent = ' ';
+        // Move cursor to the beginning
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.setStart(element.firstChild || element, 0);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    };
+    
     const handleInput = () => {
       const elementInfo = getElementInfo(element);
       let currentText = element.textContent;
       
       // Ensure there's always at least a space to keep the element editable
-      if (currentText === '' || currentText === null) {
+      if (currentText === '' || currentText === null || currentText.length === 0) {
         element.textContent = ' ';
         currentText = ' ';
-        // Move cursor to the end
-        const range = document.createRange();
-        const sel = window.getSelection();
-        range.selectNodeContents(element);
-        range.collapse(false);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        // Move cursor to the beginning
+        try {
+          const range = document.createRange();
+          const sel = window.getSelection();
+          range.setStart(element.firstChild || element, 0);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        } catch (e) {
+          // Ignore cursor positioning errors
+        }
       }
 
       window.parent.postMessage({
@@ -561,8 +584,10 @@ export default function RootLayout({
       }
     };
     
+    element.addEventListener('beforeinput', handleBeforeInput);
     element.addEventListener('input', handleInput);
     element.dataset.inputHandler = 'true';
+    element.dataset.beforeInputHandler = 'true';
     
     if (clickEvent && element.childNodes.length > 0) {
       try {
@@ -596,6 +621,11 @@ export default function RootLayout({
     element.contentEditable = 'false';
     isEditing = false;
     
+    if (element.dataset.beforeInputHandler === 'true') {
+      element.removeEventListener('beforeinput', () => {});
+      delete element.dataset.beforeInputHandler;
+    }
+    
     if (element.dataset.inputHandler === 'true') {
       element.removeEventListener('input', () => {});
       delete element.dataset.inputHandler;
@@ -613,6 +643,8 @@ export default function RootLayout({
       // Trim the final text and convert space-only to empty string for saving
       if (finalText === ' ' || finalText.trim() === '') {
         finalText = '';
+        // Update the actual element text to empty for display
+        element.textContent = '';
       }
       
       const change = {
